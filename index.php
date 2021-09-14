@@ -1,8 +1,73 @@
 <?php $title = 'Index Page'; ?>
 <?php require_once 'includes/header.php'; ?>
 
-<h1>Hello World</h1>
+<h1 class="text-center">Registation For IT Conference</h1>
+
+<form class="registration-form">
+  <div class="mb-3 row">
+    <div class="col">
+      <label for="first-name" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="first-name" aria-describedby="first-name-help">
+      <div id="first-name-help" class="form-text">Enter your first name.</div>
+    </div>
+    <div class="col">
+      <label for="last-name" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="last-name" aria-describedby="last-name-help">
+      <div id="last-name-help" class="form-text">Enter your last name.</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="birth-date" class="form-label">Date of Birth</label>
+    <input type="text" class="form-control" id="birth-date" aria-describedby="birth-date-help">
+    <div id="birth-date-help" class="form-text">Enter your Birth date.</div>
+  </div>
+  <div class="mb-3">
+    <label for="speciality" class="form-label">Area of Speciality</label>
+    <select class="form-select" id="speciality" aria-describedby="speciality-help">
+      <option selected>Select Speciality</option>
+      <option value="1">Database Admin</option>
+      <option value="2">Software Developer</option>
+      <option value="3">Web Administrator</option>
+      <option value="4">Other</option>
+    </select>
+    <div id="speciality-help" class="form-text">Select your speciality from dropdown.</div>
+  </div>
+  <div class="mb-3">
+    <label for="email-address" class="form-label">Email Address</label>
+    <input type="email" class="form-control" id="email-address" aria-describedby="email-help">
+    <div id="email-help" class="form-text">Enter your Email Address</div>
+  </div>
+  <div class="mb-3">
+    <label for="phone-number" class="form-label">Contact Number</label>
+    <input type="phone" class="form-control" id="phone-number" aria-describedby="phone-help">
+    <div id="phone-help" class="form-text">Enter your Mobile Number</div>
+  </div>
+  <div class="d-grid gap-2">
+    <button class="btn btn-primary" type="submit">Register</button>
+  </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php require_once 'includes/footer.php' ?>
-
-
