@@ -19,7 +19,7 @@ if (isset($_POST['update-button'])) {
     if ($isSuccess) {
         header("Location: index.php");
     } else {
-        echo '<h1 class="text-center text-danger">There was an Error.</h1>';
+        include 'includes/errormessage.php'; 
     }
 }
 

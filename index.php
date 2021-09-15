@@ -12,18 +12,18 @@
   <div class="mb-3 row">
     <div class="col">
       <label for="first-name" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="first-name" name="first-name" aria-describedby="first-name-help">
+      <input required type="text" class="form-control" id="first-name" name="first-name" aria-describedby="first-name-help">
       <div id="first-name-help" class="form-text">Enter your first name.</div>
     </div>
     <div class="col">
       <label for="last-name" class="form-label">Last Name</label>
-      <input type="text" class="form-control" id="last-name" name="last-name" aria-describedby="last-name-help">
+      <input required type="text" class="form-control" id="last-name" name="last-name" aria-describedby="last-name-help">
       <div id="last-name-help" class="form-text">Enter your last name.</div>
     </div>
   </div>
   <div class="mb-3">
     <label for="birth-date" class="form-label">Date of Birth</label>
-    <input type="text" class="form-control" id="birth-date" name="birth-date" aria-describedby="birth-date-help">
+    <input required type="text" class="form-control" id="birth-date" name="birth-date" aria-describedby="birth-date-help">
     <div id="birth-date-help" class="form-text">Enter your Birth date.</div>
   </div>
   <div class="mb-3">
@@ -37,12 +37,12 @@
   </div>
   <div class="mb-3">
     <label for="email-address" class="form-label">Email Address</label>
-    <input type="email" class="form-control" id="email-address" name="email-address" aria-describedby="email-help">
+    <input required type="email" class="form-control" id="email-address" name="email-address" aria-describedby="email-help">
     <div id="email-help" class="form-text">Enter your Email Address</div>
   </div>
   <div class="mb-3">
     <label for="phone-number" class="form-label">Contact Number</label>
-    <input type="phone" class="form-control" id="phone-number" name="phone-number" aria-describedby="phone-help">
+    <input required type="phone" class="form-control" id="phone-number" name="phone-number" aria-describedby="phone-help">
     <div id="phone-help" class="form-text">Enter your Mobile Number</div>
   </div>
   <div class="d-grid gap-2">

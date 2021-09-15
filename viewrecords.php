@@ -28,7 +28,7 @@
             <td scope="col">
               <a href="view.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-primary">View</a>
               <a href="edit.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-warning">Edit</a>
-              <a href="delete.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-danger">Delete</a>
+              <a href="delete.php?id=<?php echo $r['attende_id']; ?>" onclick="return confirm('Are You sure delete this record!');" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     <?php } ?>

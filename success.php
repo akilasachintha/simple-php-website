@@ -14,7 +14,7 @@
     $isSuccess = $crud -> insertAttendies($fname, $lname, $dob, $speciality, $email, $phone);
 
     if($isSuccess){
-        echo '<h1 class="text-center text-success">Successfully Registered.</h1>';
+      include 'includes/successmessage.php'; 
     }
     else{
         echo '<h1 class="text-center text-danger">There was an Error.</h1>';

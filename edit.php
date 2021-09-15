@@ -6,8 +6,10 @@
 $result = $crud->getSpecialities();
 
 if (!isset($_GET['id'])) {
-    echo '<h1 class="text-danger">Please check detatis and try again</h1>';
-} else {
+    include 'includes/errormessage.php';
+    header('Location: edit.php'); 
+} 
+else {
     $id = $_GET['id'];
     $attendee = $crud->getAttendeDetails($id);
 

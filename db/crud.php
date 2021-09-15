@@ -52,9 +52,15 @@
         }
 
         public function getAttendies(){
-            $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id";
-            $result = $this -> db -> query($sql);
-            return $result;
+            try{
+                $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id";
+                $result = $this -> db -> query($sql);
+                return $result;
+            }
+            catch(PDOException $e){
+                echo $e -> getMessage();
+                return false;
+            }
         }
 
         public function deleteAttendies($id){
@@ -73,19 +79,31 @@
         }
 
         public function getAttendeDetails($id){
-            $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id WHERE attende_id = :id";
-            $stmt = $this -> db -> prepare($sql);
+            try{
+                $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id WHERE attende_id = :id";
+                $stmt = $this -> db -> prepare($sql);
 
-            $stmt -> bindparam(':id', $id);
-            $stmt -> execute();
-            $result = $stmt -> fetch();
-            return $result;
+                $stmt -> bindparam(':id', $id);
+                $stmt -> execute();
+                $result = $stmt -> fetch();
+                return $result;
+            }
+            catch(PDOException $e){
+                echo $e -> getMessage();
+                return false;
+            }
         }
 
         public function getSpecialities(){
-            $sql = "SELECT * FROM `specialities`";
-            $result = $this -> db -> query($sql);
-            return $result;    
+            try{
+                $sql = "SELECT * FROM `specialities`";
+                $result = $this -> db -> query($sql);
+                return $result;  
+            }
+            catch(PDOException $e){
+                echo $e -> getMessage();
+                return false;
+            }  
         }
 
     }
