@@ -19,7 +19,7 @@ if (isset($_POST['update-button'])) {
     if ($isSuccess) {
         header("Location: index.php");
     } else {
-        include 'includes/errormessage.php'; 
+        include 'includes/errormessage.php';
     }
 }
 

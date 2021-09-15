@@ -1,17 +1,17 @@
 <?php
 //Remote Database
-$host = 'sql10.freesqldatabase.com';
-$db = 'sql10437309';
-$dbuser = 'sql10437309';
-$dbpass = 'GmI98dLT27';
-$charset = 'utf8mb4';
+// $host = 'sql10.freesqldatabase.com';
+// $db = 'sql10437309';
+// $dbuser = 'sql10437309';
+// $dbpass = 'GmI98dLT27';
+// $charset = 'utf8mb4';
 
 //Local Database
-// $host = 'localhost';
-// $db = 'test_php_db';
-// $dbuser = 'root';
-// $dbpass = '';
-// $charset = 'utf8mb4';
+$host = 'localhost';
+$db = 'test_php_db';
+$dbuser = 'root';
+$dbpass = '';
+$charset = 'utf8mb4';
 
 $dcn = "mysql:host=$host;dbname=$db;charset=$charset";
 

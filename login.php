@@ -9,19 +9,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = strtolower(trim($_POST['username']));
   $password = $_POST['password'];
 
-  $newPassword = md5($password.$username);
+  $newPassword = md5($password . $username);
 
-  $result = $user -> getUser($username, $newPassword);
+  $result = $user->getUser($username, $newPassword);
 
-  if(!$result){
-    echo '<div class="alert alert-danger">Your username or password incorrect.</div>'; 
-  }
-  else{
+  if (!$result) {
+    echo '<div class="alert alert-danger">Your username or password incorrect.</div>';
+  } else {
     $_SESSION['username'] = $username;
     $_SESSION['userid'] = $result['user_id'];
     header('Location: viewrecords.php');
   }
-
 }
 
 ?>

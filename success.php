@@ -29,7 +29,7 @@
 
 
 <div class="card" style="width: 18rem;">
-  <img src="<?php echo empty($destination) ? 'uploads/default.png': $destination; ?>" width="100px" class="card-img-top">
+  <img src="<?php echo empty($destination) ? 'uploads/default.png' : $destination; ?>" width="100px" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title"><?php echo $_POST['first-name'] . ' ' . $_POST['last-name']; ?></h5>
     <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST['speciality']; ?></h6>

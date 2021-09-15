@@ -8,9 +8,8 @@ $result = $crud->getSpecialities();
 
 if (!isset($_GET['id'])) {
     include 'includes/errormessage.php';
-    header('Location: edit.php'); 
-} 
-else {
+    header('Location: edit.php');
+} else {
     $id = $_GET['id'];
     $attendee = $crud->getAttendeDetails($id);
 
