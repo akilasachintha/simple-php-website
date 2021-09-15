@@ -1,9 +1,12 @@
-<?php $title = 'Success Page'; ?>
-<?php require_once 'includes/header.php'; ?>
+<?php $title = 'Edit Details'; ?>
+
 <?php require_once 'db/conn.php'; ?>
 
 
-<?php if(isset($_POST['register-button'])){
+<?php
+
+if (isset($_POST['update-button'])) {
+    $id = $_POST['attende-id'];
     $fname = $_POST['first-name'];
     $lname = $_POST['last-name'];
     $dob = $_POST['birth-date'];
@@ -11,16 +14,16 @@
     $email = $_POST['email-address'];
     $phone = $_POST['phone-number'];
 
-    $isSuccess = $crud -> insertAttendies($fname, $lname, $dob, $speciality, $email, $phone);
+    $isSuccess = $crud->editAttendies($id, $fname, $lname, $dob, $speciality, $email, $phone);
 
-    if($isSuccess){
-        echo '<h1 class="text-center text-success">Successfully Registered.</h1>';
-    }
-    else{
+    if ($isSuccess) {
+        header("Location: index.php");
+    } else {
         echo '<h1 class="text-center text-danger">There was an Error.</h1>';
     }
+}
 
-} ?>
+?>
 
 
 <?php require_once 'includes/footer.php' ?>

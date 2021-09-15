@@ -28,9 +28,57 @@
             }
         } 
 
+        public function editAttendies($id, $fname, $lname, $dob, $speciality, $email, $phone){
+            try{
+                $sql = "UPDATE `attendence` SET `first_name`=:fname,`last_name`=:lname,`birth_date`=:dob,`speciality_value`=:speciality,`email_address`=:email,`phone_number`=:phone WHERE attende_id = :id";
+                $stmt = $this -> db -> prepare($sql);
+
+                $stmt-> bindparam(':id', $id);
+                $stmt-> bindparam(':fname', $fname);
+                $stmt-> bindparam(':lname', $lname);
+                $stmt-> bindparam(':dob', $dob);
+                $stmt-> bindparam(':speciality', $speciality);
+                $stmt-> bindparam(':email', $email);
+                $stmt-> bindparam(':phone', $phone);
+
+                $stmt-> execute();
+                return true;
+            }
+            catch(PDOException $e){
+                echo $e -> getMessage();
+                return false;
+            }
+
+        }
+
         public function getAttendies(){
             $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id";
             $result = $this -> db -> query($sql);
+            return $result;
+        }
+
+        public function deleteAttendies($id){
+            try{
+                $sql = "DELETE FROM `attendence` WHERE attende_id = :id";
+                $stmt = $this -> db -> prepare($sql);
+
+                $stmt -> bindparam(':id', $id);
+                $stmt -> execute();
+                return true;
+            }
+            catch(PDOException $e){
+                echo $e -> getMessage();
+                return false;
+            }
+        }
+
+        public function getAttendeDetails($id){
+            $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id WHERE attende_id = :id";
+            $stmt = $this -> db -> prepare($sql);
+
+            $stmt -> bindparam(':id', $id);
+            $stmt -> execute();
+            $result = $stmt -> fetch();
             return $result;
         }
 

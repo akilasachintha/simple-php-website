@@ -13,10 +13,9 @@
       <th scope="col">#</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
-      <th scope="col">Birth Day</th>
       <th scope="col">Specialities</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
+      <th scope="col">Actions</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -25,10 +24,12 @@
             <td><?php echo $r['attende_id']; ?></td>
             <td><?php echo $r['first_name']; ?></td>
             <td><?php echo $r['last_name']; ?></td>
-            <td><?php echo $r['birth_date']; ?></td>
             <td><?php echo $r['specialities_name']; ?></td>
-            <td><?php echo $r['email_address']; ?></td>
-            <td><?php echo $r['phone_number']; ?></td>
+            <td scope="col">
+              <a href="view.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-primary">View</a>
+              <a href="edit.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-warning">Edit</a>
+              <a href="delete.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
     <?php } ?>
   </tbody>
