@@ -23,7 +23,7 @@
 
 
 @media screen and (max-width: 992px) {
-    .registration-form{
+    .registration-form, .login-form{
         width: 90%;
     }
   }
