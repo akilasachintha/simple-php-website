@@ -61,6 +61,7 @@ else {
         </div>
         <div class="d-grid gap-2">
             <button class="btn btn-success" type="submit" name="update-button">Save Changes</button>
+            <a href="viewrecords.php" class="btn btn-info">Back to List</a>
         </div>
     </form>
 
