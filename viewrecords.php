@@ -26,7 +26,7 @@
             <td><?php echo $r['first_name']; ?></td>
             <td><?php echo $r['last_name']; ?></td>
             <td><?php echo $r['specialities_name']; ?></td>
-            <td scope="col">
+            <td>
               <a href="view.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-primary">View</a>
               <a href="edit.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-warning">Edit</a>
               <a href="delete.php?id=<?php echo $r['attende_id']; ?>" onclick="return confirm('Are You sure delete this record!');" class="btn btn-danger">Delete</a>
