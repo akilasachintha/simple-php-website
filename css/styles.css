@@ -27,6 +27,10 @@ h1{
     margin-bottom: 1%;
 }
 
+.col{
+    text-align: center;
+}
+
 @media screen and (max-width: 992px) {
     .registration-form, .login-form{
         width: 90%;

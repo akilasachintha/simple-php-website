@@ -7,20 +7,20 @@
 $result = $crud->getAttendies();
 ?>
 <div class="row border-bottom">
-  <div class="col">#</div>
-  <div class="col">First Name</div>
-  <div class="col">Last Name</div>
-  <div class="col">Specialities</div>
-  <div class="col">Actions</div>
+  <div class="col col-lg-2">#</div>
+  <div class="col col-lg-2">First Name</div>
+  <div class="col col-lg-2">Last Name</div>
+  <div class="col col-lg-2">Specialities</div>
+  <div class="col col-lg-4">Actions</div>
 
 </div>
 <?php while ($r = $result->fetch(PDO::FETCH_ASSOC)) { ?>
   <div class="row">
-    <div class="col"><?php echo $r['attende_id']; ?></div>
-    <div class="col"><?php echo $r['first_name']; ?></div>
-    <div class="col"><?php echo $r['last_name']; ?></div>
-    <div class="col"><?php echo $r['specialities_name']; ?></div>
-    <div class="col">
+    <div class="col col-lg-2"><?php echo $r['attende_id']; ?></div>
+    <div class="col col-lg-2"><?php echo $r['first_name']; ?></div>
+    <div class="col col-lg-2"><?php echo $r['last_name']; ?></div>
+    <div class="col col-lg-2"><?php echo $r['specialities_name']; ?></div>
+    <div class="col col-lg-4">
       <a href="view.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-primary">View</a>
       <a href="edit.php?id=<?php echo $r['attende_id']; ?>" class="btn btn-warning">Edit</a>
       <a href="delete.php?id=<?php echo $r['attende_id']; ?>" onclick="return confirm('Are You sure delete this record!');" class="btn btn-danger">Delete</a>
