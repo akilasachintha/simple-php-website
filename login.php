@@ -31,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <form class="login-form" method="post" action=<?php echo htmlentities($_SERVER['PHP_SELF']); ?>>
   <div class="mb-3">
     <label for="login-username" class="form-label">User Name</label>
-    <input type="text" class="form-control" id="login-username" aria-describedby="username-help" name="username" value=<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['username']; ?>>
+    <input required type="text" class="form-control" id="login-username" aria-describedby="username-help" name="username" value=<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['username']; ?>>
     <div id="username-help" class="form-text">We'll never share your username with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="login-password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="login-password" aria-describedby="password-help" name="password">
+    <input required type="password" class="form-control" id="login-password" aria-describedby="password-help" name="password">
     <div id="password-help" class="form-text">We'll never share your password with anyone else.</div>
   </div>
   <div class="d-grid gap-2">
