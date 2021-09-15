@@ -12,6 +12,8 @@ if (!isset($_GET['id'])) {
     $result = $crud->getAttendeDetails($id);
 ?>
 
+
+    <img src="<?php echo empty($result['avatar_path']) ? 'uploads/default.png' : $result['avatar_path']; ?>" width="100px" class="avatar-image">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title"><?php echo $result['first_name'] . ' ' . $result['last_name']; ?></h5>

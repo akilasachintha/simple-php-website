@@ -7,9 +7,9 @@
             $this -> db = $conn;    
         }
 
-        public function insertAttendies($fname, $lname, $dob, $speciality, $email, $phone){
+        public function insertAttendies($fname, $lname, $dob, $speciality, $email, $phone, $avatarpath){
             try{
-                $sql = "INSERT INTO `attendence`(`attende_id`, `first_name`, `last_name`, `birth_date`, `speciality_value`, `email_address`, `phone_number`) VALUES (null, :fname, :lname, :dob, :speciality, :email, :phone)";
+                $sql = "INSERT INTO `attendence`(`attende_id`, `first_name`, `last_name`, `birth_date`, `speciality_value`, `email_address`, `phone_number`, `avatar_path`) VALUES (null, :fname, :lname, :dob, :speciality, :email, :phone, :avatarpath)";
                 $stmt = $this -> db -> prepare($sql);
 
                 $stmt-> bindparam(':fname', $fname);
@@ -18,6 +18,7 @@
                 $stmt-> bindparam(':speciality', $speciality);
                 $stmt-> bindparam(':email', $email);
                 $stmt-> bindparam(':phone', $phone);
+                $stmt-> bindparam(':avatarpath', $avatarpath);
 
                 $stmt-> execute();
                 return true;
@@ -52,7 +53,7 @@
 
         public function getAttendies(){
             try{
-                $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id";
+                $sql = "SELECT * FROM `attendence` a inner join `specialities` s on a.speciality_value = s.specialities_id ORDER BY a.attende_id ASC";
                 $result = $this -> db -> query($sql);
                 return $result;
             }

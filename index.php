@@ -2,13 +2,13 @@
 <?php require_once 'includes/header.php'; ?>
 <?php require_once 'db/conn.php'; ?>
 
-<?php 
-  $result = $crud -> getSpecialities();
+<?php
+$result = $crud->getSpecialities();
 ?>
 
 <h1 class="text-center">Registation For IT Conference</h1>
 
-<form class="registration-form" method="post" action="success.php">
+<form class="registration-form" method="post" action="success.php" enctype="multipart/form-data">
   <div class="mb-3 row">
     <div class="col">
       <label for="first-name" class="form-label">First Name</label>
@@ -29,7 +29,7 @@
   <div class="mb-3">
     <label for="speciality" class="form-label">Area of Speciality</label>
     <select class="form-select" id="speciality" name="speciality" aria-describedby="speciality-help">
-      <?php while($r = $result -> fetch(PDO::FETCH_ASSOC)){ ?>
+      <?php while ($r = $result->fetch(PDO::FETCH_ASSOC)) { ?>
         <option value="<?php echo $r['specialities_id']; ?>"><?php echo $r['specialities_name']; ?></option>
       <?php } ?>
     </select>
@@ -44,6 +44,10 @@
     <label for="phone-number" class="form-label">Contact Number</label>
     <input required type="phone" class="form-control" id="phone-number" name="phone-number" aria-describedby="phone-help">
     <div id="phone-help" class="form-text">Enter your Mobile Number</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="customFile">Upload File</label>
+    <input type="file" class="form-control" id="customFile" name="avatar"/>
   </div>
   <div class="d-grid gap-2">
     <button class="btn btn-primary" type="submit" name="register-button">Register</button>
