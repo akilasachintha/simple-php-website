@@ -1,21 +1,30 @@
-<?php 
-    $host = 'sql10.freesqldatabase.com';
-    $db = 'sql10437309';
-    $user = 'sql10437309';
-    $pass = 'GmI98dLT27';
-    $charset = 'utf8mb4';
+<?php
+//Remote Database
+// $host = 'sql10.freesqldatabase.com';
+// $db = 'sql10437309';
+// $user = 'sql10437309';
+// $pass = 'GmI98dLT27';
+// $charset = 'utf8mb4';
 
-    $dcn = "mysql:host=$host;dbname=$db;charset=$charset";
+$host = 'localhost';
+$db = 'test_php_db';
+$dbuser = 'root';
+$dbpass = '';
+$charset = 'utf8mb4';
 
-    try{
-        $pdo = new PDO($dcn, $user, $pass);
-        $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch(PDOException $e){
-        throw new PDOException($e->getMessage());
-    }
+$dcn = "mysql:host=$host;dbname=$db;charset=$charset";
 
-    require_once 'crud.php';
-    $crud = new crud($pdo);
+try {
+    $pdo = new PDO($dcn, $dbuser, $dbpass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    throw new PDOException($e->getMessage());
+}
 
-?>
+require_once 'crud.php';
+require_once 'user.php';
+
+$crud = new crud($pdo);
+$user = new user($pdo);
+
+$user -> insertUser("admin", "password");

@@ -1,4 +1,4 @@
-<?php $title = 'Index Page'; ?>
+<?php $title = 'Home| IT'; ?>
 <?php require_once 'includes/header.php'; ?>
 <?php require_once 'db/conn.php'; ?>
 

@@ -48,7 +48,6 @@
                 echo $e -> getMessage();
                 return false;
             }
-
         }
 
         public function getAttendies(){

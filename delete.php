@@ -1,3 +1,4 @@
+<?php require_once 'includes/authcheck.php'; ?>
 <?php require_once 'db/conn.php'; ?>
 
 <?php 
