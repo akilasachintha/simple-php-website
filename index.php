@@ -47,7 +47,7 @@ $result = $crud->getSpecialities();
   </div>
   <div class="mb-3">
     <label class="form-label" for="customFile">Upload File</label>
-    <input type="file" class="form-control" id="customFile" name="avatar"/>
+    <input required type="file" class="form-control" id="customFile" name="avatar"/>
   </div>
   <div class="d-grid gap-2">
     <button class="btn btn-primary" type="submit" name="register-button">Register</button>
