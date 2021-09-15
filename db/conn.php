@@ -1,8 +1,8 @@
 <?php 
-    $host = 'localhost';
-    $db = 'test_php_db';
-    $user = 'root';
-    $pass = '';
+    $host = 'sql10.freesqldatabase.com';
+    $db = 'sql10437309';
+    $user = 'sql10437309';
+    $pass = 'GmI98dLT27';
     $charset = 'utf8mb4';
 
     $dcn = "mysql:host=$host;dbname=$db;charset=$charset";
